@@ -284,25 +284,25 @@ export const PROFILE_DATA = {
       image: "/images/photo_115.jpg"
     },
     {
-      id: "bat-grassroots-capacity",
-      title: "BAT Project on Grassroots Capacity Building & Education",
-      category: "Community Development",
-      period: "2015 – 2025",
+      id: "child-labour-eradication",
+      title: "Child Labour Eradication & School Re-Enrollment Mission",
+      category: "Child Protection",
+      period: "2016 – 2024",
       location: "Tamil Nadu",
-      focusArea: "Education Quality, Resource Centres & Capacity Building",
-      shortDescription: "Managing Community Resource Centres to enhance education quality, information dissemination, and support services for rural children.",
-      overview: "Under the BAT Project, Dr. Srinivasan managed Community Resource Centres designed to bridge educational gaps and provide safe spaces for children and youth.",
-      challenge: "Lack of access to quality educational support, career guidance, and social protection information in remote villages.",
-      approach: "Established Community Resource Centres as accessible hubs offering remedial learning, child protection guidance, and government scheme support.",
+      focusArea: "Workplace Inspections, Child Rescue & Mainstream Education",
+      shortDescription: "Grassroots campaign mobilizing workplace inspections, awareness rallies, and community vigilance to rescue child labourers and re-enroll them into formal schooling.",
+      overview: "A dedicated grassroots initiative spearheaded across vulnerable industrial and rural clusters to eliminate child labour, conduct decisive workplace inspections, rescue underage workers, and restore their fundamental right to schooling and protection.",
+      challenge: "Poverty, migration, and debt cycles compelled families to send school-age children to work in brick kilns, mills, agricultural fields, and small workshops, leading to acute dropout rates and systemic exploitation.",
+      approach: "Conducted coordinated field inspections with government task forces and local police, organized massive community sensitization rallies, and established direct educational rehabilitation pipelines for rescued children.",
       activities: [
-        "Managed day-to-day operations of Community Resource Centres in target villages.",
-        "Facilitated educational enhancement and digital literacy sessions for children.",
-        "Held legal and social protection awareness workshops for local parents and self-help groups.",
-        "Fostered institutional partnerships with government bodies and district social welfare departments."
+        "Spearheaded multi-agency rescue inspections across hazardous workplaces and informal industrial units.",
+        "Organized community-wide anti-child-labour awareness rallies and media sensitization campaigns.",
+        "Re-enrolled over 100+ rescued and dropout children into formal government and residential schools.",
+        "Conducted family counseling and facilitated linkage to government social welfare schemes to prevent relapses."
       ],
-      role: "Project Manager — Resource management, curriculum design, local stakeholder engagement, and team leadership.",
-      stakeholders: ["Peace Trust", "Village Communities", "District Social Welfare Dept", "Youth Volunteers"],
-      image: "/images/photo_120.jpg"
+      role: "Project Lead & Field Coordinator — Coordinated rescue operations, led multi-stakeholder inspections, facilitated child rehabilitation, and liaised with law enforcement and child welfare authorities.",
+      stakeholders: ["Peace Trust", "District Child Protection Unit (DCPU)", "Child Welfare Committee (CWC)", "Labour Department", "Local Schools & Village Panchayats"],
+      image: "/images/photo_130.jpg"
     },
     {
       id: "adolescent-empowerment-groups",

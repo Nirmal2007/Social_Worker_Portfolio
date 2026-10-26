@@ -1,64 +1,96 @@
+
 import React, { useEffect } from 'react';
 import { PROFILE_DATA } from '../data/profileData';
 
+const SITE_URL = 'https://srinivasan.social/';
+
 export const SEOHead: React.FC = () => {
   useEffect(() => {
-    // Set Page Title
-    document.title = `${PROFILE_DATA.name} | Senior Social Worker • Counselor • Gender Specialist`;
+    // Page title
+    document.title =
+      `${PROFILE_DATA.name} | Social Worker & Gender Specialist`;
 
-    // Person JSON-LD Schema
+    // Canonical URL
+    let canonical = document.querySelector(
+      'link[rel="canonical"]'
+    ) as HTMLLinkElement | null;
+
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+
+    canonical.href = SITE_URL;
+
+    // Person structured data
     const personSchema = {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": PROFILE_DATA.name,
-      "alternateName": PROFILE_DATA.officialName,
-      "jobTitle": "Senior Social Worker & Gender Specialist",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Peace Trust"
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      '@id': `${SITE_URL}#person`,
+      name: PROFILE_DATA.name,
+      alternateName: PROFILE_DATA.officialName,
+      url: SITE_URL,
+      jobTitle: [
+        'Social Worker',
+        'Counselor',
+        'Gender Specialist'
+      ],
+      worksFor: {
+        '@type': 'Organization',
+        name: 'Peace Trust'
       },
-      "alumniOf": [
+      alumniOf: [
         {
-          "@type": "EducationalOrganization",
-          "name": "Annamalai University"
+          '@type': 'EducationalOrganization',
+          name: 'Annamalai University'
         },
         {
-          "@type": "EducationalOrganization",
-          "name": "Lectern Peace and Human Rights Academy"
+          '@type': 'EducationalOrganization',
+          name: 'Lectern Peace and Human Rights Academy'
         },
         {
-          "@type": "EducationalOrganization",
-          "name": "Techno Global University"
+          '@type': 'EducationalOrganization',
+          name: 'Techno Global University'
         }
       ],
-      "email": PROFILE_DATA.contact.email,
-      "telephone": PROFILE_DATA.contact.phone,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": PROFILE_DATA.contact.address,
-        "addressLocality": "Dindigul / Vedasandur",
-        "addressRegion": "Tamil Nadu",
-        "addressCountry": "India"
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Dindigul',
+        addressRegion: 'Tamil Nadu',
+        addressCountry: 'IN'
       },
-      "knowsAbout": [
-        "Child Protection",
-        "Child Labour Eradication",
-        "Prevention of Child Marriage",
+      knowsAbout: [
+        'Social Work',
+        'Community Development',
+        'Child Protection',
+        'Child Labour Eradication',
+        'Prevention of Child Marriage',
         "Women's Empowerment",
-        "Gender Equality",
-        "Counseling Psychology",
-        "Social Work Administration"
+        'Gender Equality',
+        'Counseling',
+        'Social Work Administration'
       ]
     };
 
-    let scriptTag = document.getElementById('json-ld-schema');
-    if (!scriptTag) {
-      scriptTag = document.createElement('script');
-      scriptTag.id = 'json-ld-[#1E293B]-schema';
-      scriptTag.setAttribute('type', 'application/ld+json');
-      document.head.appendChild(scriptTag);
+    // Create or update one JSON-LD script
+    let script = document.getElementById(
+      'json-ld-schema'
+    ) as HTMLScriptElement | null;
+
+    if (!script) {
+      script = document.createElement('script');
+      script.id = 'json-ld-schema';
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
     }
-    scriptTag.textContent = JSON.stringify(personSchema);
+
+    script.textContent = JSON.stringify(personSchema);
+
+    return () => {
+      // Clean up only the schema inserted by this component
+      script?.remove();
+    };
   }, []);
 
   return null;

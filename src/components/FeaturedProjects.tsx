@@ -11,7 +11,7 @@ interface FeaturedProjectsProps {
 export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProject }) => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
 
-  const categories = ['All', 'Child Protection', 'Community Development', 'Youth Empowerment', "Women's Empowerment"];
+  const categories = ['All', ...Array.from(new Set(PROFILE_DATA.projects.map((p) => p.category)))];
 
   const filteredProjects = activeCategory === 'All'
     ? PROFILE_DATA.projects
