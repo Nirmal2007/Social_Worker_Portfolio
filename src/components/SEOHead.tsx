@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { PROFILE_DATA } from '../data/profileData';
 
-const SITE_URL = 'https://srinivasan.social/';
+const SITE_URL = 'https://drsrinivasan.social/';
 
 export const SEOHead: React.FC = () => {
   useEffect(() => {
